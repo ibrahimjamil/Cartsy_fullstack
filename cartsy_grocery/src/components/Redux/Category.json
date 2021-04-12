@@ -1,0 +1,66 @@
+[
+    {
+        "name":"Fresh Vegetable",
+        "catId":"1",
+        "svg":"https://d1rn6kzjmi8824.cloudfront.net/wp-content/uploads/2020/07/11124731/Fresh-Vegetables.svg",
+        "subCategories":
+            [
+                {
+                    "name":"Flower Vegetable",
+                    "subId":"1A"
+                },
+                {
+                    "name":"Leaf Vegetable",
+                    "subId":"1B"
+                }
+            ]      
+    },
+    {
+        "name":"Fresh Fruits",
+        "catId":"2",
+        "svg":"https://d1rn6kzjmi8824.cloudfront.net/wp-content/uploads/2020/07/11124731/Fresh-Vegetables.svg",
+        "subCategories":
+            [
+                {
+                    "name":"Berries",
+                    "subId":"2A"
+                },
+                {
+                    "name":"Citrus Fruits",
+                    "subId":"2B"
+                }
+            ]      
+    },
+    {
+        "name":"dairy and eggs",
+        "catId":"3",
+        "svg":"https://d1rn6kzjmi8824.cloudfront.net/wp-content/uploads/2020/07/11124730/Bakery.svg",
+        "subCategories":
+            [
+                {
+                    "name":"Eggs",
+                    "subId":"3A"
+                },
+                {
+                    "name":"Butter",
+                    "subId":"3B"
+                }
+            ]      
+    },
+    {
+        "name":"Frozen",
+        "catId":"4",
+        "svg":"https://d1rn6kzjmi8824.cloudfront.net/wp-content/uploads/2020/07/11124730/Bakery.svg",
+        "subCategories":
+            [
+                {
+                    "name":"Cutted Fish",
+                    "subId":"4A"
+                },
+                {
+                    "name":"Cutted meat",
+                    "subId":"4B"
+                }
+            ]      
+    }
+]
