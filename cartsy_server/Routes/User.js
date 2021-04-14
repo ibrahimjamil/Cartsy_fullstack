@@ -28,6 +28,7 @@ router.post('/login',async(req,res)=>{
     }else{
         res.send()                              
     }
+    console.log("hello")
 })
 
 router.get('/',async(req,res)=>{
