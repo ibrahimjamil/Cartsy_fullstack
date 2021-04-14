@@ -127,6 +127,7 @@ function Account() {
               }
           });
           if (res.data){
+              //storing token in local storage
               window.localStorage.setItem('token', res.data);
               setShow2(true)
               setTimeout(()=>{

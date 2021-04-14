@@ -5,6 +5,7 @@ const Bcrypt=require('bcrypt')
 const JWT=require('jsonwebtoken')
 
 router.post('/register',async(req,res)=>{
+    //bycrypt hash the password and store it in database
     let Gpassword= await Bcrypt.hash(req.body.Password,10)
     await UserModel.create({
         Email: req.body.Email,
@@ -19,6 +20,7 @@ router.post('/login',async(req,res)=>{
             Email:req.body.Email
         }
     })
+    // comapre returns true if password matched with login password
     let result = await Bcrypt.compare(req.body.Password, data.Password)
     if (result===true){
         let token = await JWT.sign({Email:data.Email,password:data.Password},"SECRET_KEY")
