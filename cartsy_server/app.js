@@ -2,6 +2,8 @@
 const express=require('express')
 const app=express()
 const PostRoutes=require( './Routes/Post.js' )
+const UserRoutes=require( './Routes/User.js')
+const CheckoutRoutes=require( './Routes/Checkout.js')
 require('dotenv/config')
 const cors=require('cors')
 const SDB= require('./config/database')
@@ -17,9 +19,10 @@ app.use(cors())
 SDB.authenticate()
     .then(()=>console.log("connection has been established for postgres"))
 
-//route for Home products
+//route for all
 app.use('/',PostRoutes)
-
+app.use('/account',UserRoutes)
+app.use('/checkout',CheckoutRoutes)
 
 //localhost running 
 const PORT=5000

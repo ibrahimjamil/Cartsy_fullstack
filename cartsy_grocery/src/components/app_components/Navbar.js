@@ -16,6 +16,7 @@ import {useSelector,useDispatch} from 'react-redux'
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import { Grid, Hidden} from '@material-ui/core';
 import checkingIdsforDipatch from './CheckingIDS'
+import axios from 'axios';
 
 
 let logo = "https://d1rn6kzjmi8824.cloudfront.net/wp-content/uploads/2020/07/16065923/Grocery.svg"
@@ -189,7 +190,16 @@ export default function Navbar() {
     }
     setState({ ...state, [anchor]: open });
   };
-
+  const handleCheckout=async(e)=>{
+    e.preventDefault();
+    await axios({
+      method:"Post",
+      url: 'http://localhost:5000/checkout',
+      data:{
+        token1:window.localStorage.getItem('token')
+      }
+    })
+  }
   //all list categories menu_sidebar
   const list = () => (
     <div className={classes.leftDrawer}>
@@ -246,7 +256,7 @@ export default function Navbar() {
               </div>
             ))}
           </div>
-          <div  className={classes.checkO}>
+          <div  className={classes.checkO} onClick={handleCheckout}>
             <div style={{display:"flex",flex:"0.7",justifyContent:"center",alignItems:"center"}}>
               <a>Proceed to checkout</a>
             </div>

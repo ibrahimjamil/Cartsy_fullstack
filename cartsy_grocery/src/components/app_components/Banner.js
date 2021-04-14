@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import {  makeStyles } from '@material-ui/core/styles';
 import { Grid, Hidden } from '@material-ui/core';
 import {useSelector,useDispatch} from 'react-redux'
@@ -70,6 +70,10 @@ function Banner() {
   const searchRed=useSelector(state=>state.SearchReducer)
   const products = useSelector(state => state.dataReducer)
   const dispatch=useDispatch()
+
+  useEffect(()=>{
+    document.documentElement.scrollTop = 0;
+  })
 
   const handleChange=(e)=>{
     setText(e.target.value)

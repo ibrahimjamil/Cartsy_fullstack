@@ -2,7 +2,7 @@
 const express=require('express')
 const router=express.Router()
 const Data=require('../Data/Data.json')
-const Productmodel= require('../Pmodel/Product')
+const Productmodel= require('../model/Product')
 
 // get routes for /products/      onward
 router.get('/',async(req,res)=>{
@@ -30,7 +30,6 @@ router.delete('/',async (req,res)=>{
 // post routes for /products/      onward
 router.post('/',checkData, async (req,res)=>{
     const  P= await Productmodel.bulkCreate(Data)
-    console.log(JSON.stringify(P))
     res.end()
 })
 
