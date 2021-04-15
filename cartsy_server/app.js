@@ -4,6 +4,7 @@ const app=express()
 const PostRoutes=require( './Routes/Post.js' )
 const UserRoutes=require( './Routes/User.js')
 const CheckoutRoutes=require( './Routes/Checkout.js')
+const ImageRoute=require( './Routes/Image')
 require('dotenv/config')
 const cors=require('cors')
 const SDB= require('./config/database')
@@ -23,6 +24,7 @@ SDB.authenticate()
 app.use('/',PostRoutes)
 app.use('/account',UserRoutes)
 app.use('/checkout',CheckoutRoutes)
+app.use('/image',ImageRoute)
 
 //localhost running 
 const PORT=5000

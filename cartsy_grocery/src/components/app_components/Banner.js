@@ -104,7 +104,6 @@ function Banner() {
               </Grid>
             </div>
         </Hidden>
-        
     </div>
     )
 }

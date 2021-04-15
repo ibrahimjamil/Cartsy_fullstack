@@ -13,6 +13,7 @@ import SpecificProduct from './components/app_components/SpecificProduct'
 import Footer from './components/app_components/Footer'
 import SagaTesting from "./components/app_components/SagaTesting";
 import Account from './components/app_components/Account'
+import Demo from './components/app_components/Demo'
 
 const sagamiddlware=createSagaMiddleware()
 const store=createStore(combineReducer,composeWithDevTools(applyMiddleware(sagamiddlware)))
@@ -22,11 +23,10 @@ function App() {
   return (
     <Provider store={store}>
       <div>
-          <SagaTesting/>
           <Router>
             <div style={{display: 'flex',flexDirection: 'column'}}>
               <Navbar/>
-                <Switch>
+                <Switch> 
                     <Route path="/" exact>
                       <div style={{display:"flex",flexDirection:"row"}}>
                         <FixedSidebar/>

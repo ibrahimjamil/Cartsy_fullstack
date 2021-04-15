@@ -21,9 +21,8 @@ router.post('/login',async(req,res)=>{
         }
     })
     // comapre returns true if password matched with login password
-    let result = await Bcrypt.compare(req.body.Password, data.Password)
-    if (result===true){
-        let token = await JWT.sign({Email:data.Email,password:data.Password},"SECRET_KEY")
+    if (Bcrypt.compare(req.body.Password, data.Password)){
+        let token = await JWT.sign({Email:data.Email},"SECRET_KEY")
         res.send(JSON.stringify(token));
     }else{
         res.send()                              

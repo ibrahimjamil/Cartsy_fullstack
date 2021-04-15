@@ -195,8 +195,8 @@ export default function Navbar() {
     await axios({
       method:"Post",
       url: 'http://localhost:5000/checkout',
-      data:{
-        token1:window.localStorage.getItem('token')
+      headers:{
+        authentication:window.localStorage.getItem('token')
       }
     })
   }
