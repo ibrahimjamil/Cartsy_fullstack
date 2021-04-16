@@ -24,7 +24,6 @@ SDB.authenticate()
 app.use('/',PostRoutes)
 app.use('/account',UserRoutes)
 app.use('/checkout',CheckoutRoutes)
-app.use('/image',ImageRoute)
 
 //localhost running 
 const PORT=5000
